@@ -11,7 +11,7 @@ The [TermoCube](https://www.sscooling.com/product/thermocube-200-500/) is a reci
 - Find the USB address of the ThermoCube: `TC_address = ThermoCube.find_address()` 
 - The find_address() function returns the address in the format of `COMX` on Windows or `dev/ttyUSBX` on Linux. The address will also be printed. 
 - If you use a serial to USB converter that has an FTDI chip inside, the find_address() function will also return the ID nubmer for the FTDI chip. This ID is unique to the chip and can be used to find the port quicker in the future by: `ThermoCube.find_address(identifier = ID)`
-- Initiate the valve: `TC = ThermoCube.ThermoCube(TC_address, name='My_TC')`
+- Initiate the ThermoCube: `TC = ThermoCube.ThermoCube(TC_address, name='My_TC')`
 - Now the ThermoCube is ready for operation.
 
 # Operation
