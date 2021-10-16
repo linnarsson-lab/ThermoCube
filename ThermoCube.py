@@ -81,8 +81,8 @@ class ThermoCube():
         -read_temp() Read the current temperature
         -check_error() Check for errors
     
-    The Thermo Cube works in Farenheit, but the set_temp() function wants
-    Celcius values. read_set_point() and read_temp() return Farenheit
+    The Thermo Cube works in Fahrenheit, but the set_temp() function wants
+    Celcius values. read_set_point() and read_temp() return Fahrenheit
     '''
     
     def __init__(self, address, name = ''):
@@ -109,23 +109,23 @@ class ThermoCube():
 
 # Low level funcitons
 
-    def celsius_to_farenheit(self, C):
+    def celsius_to_fahrenheit(self, C):
         """
-        Converts degree Celsius to degree Farenheit.
+        Converts degree Celsius to degree Fahrenheit.
         Input:
         `C` (float or int): degree Celsius.
         Returns:
-        Degree farenheit as float with one decimal.
+        Degree fahrenheit as float with one decimal.
         
         """
         F = (C * (9/5)) + 32
         return round(F, 1)
     
-    def farenheit_to_celsius(self, F):
+    def fahrenheit_to_celsius(self, F):
         """
-        Converts degree Farenheit to degree Celcius.
+        Converts degree Fahrenheit to degree Celcius.
         Input:
-        `F` (float or int): degree Farenheit.
+        `F` (float or int): degree Fahrenheit.
         Returns:
         Degree celcius as float with one decimal.
         
@@ -230,7 +230,7 @@ class ThermoCube():
         self.read_response()
         
         #Command
-        temp_F = self.celsius_to_farenheit(temp_C)
+        temp_F = self.celsius_to_fahrenheit(temp_C)
         msg = self.TC_command(225, temperature = temp_F)
         
         n_try = 1
@@ -257,7 +257,7 @@ class ThermoCube():
         """
         Read the set point of the Thermal cube
         Output:
-        returns set point in farenheid
+        returns set point in fahrenheit
             
         """
         #Flush output
@@ -276,7 +276,7 @@ class ThermoCube():
         """
         CURRENT temperature of RTD sensor
         Output:
-        current temperature in Farenheid read by the RTD sensor
+        current temperature in Fahrenheit read by the RTD sensor
         
         """
         #Flush output
@@ -313,6 +313,8 @@ class ThermoCube():
         Check for errors. Raises exeption if there is an error.
         Retruns a warning if error is resolved after 100 seconds.
         If verbose = True, will print that there is no error if there is no error.
+        If rais_error = True, it will raise an error when one is encountered.
+        Set to False, only if error handeling is implemented elsewhere. 
         
         """
         #Check for errors and interpret the response
