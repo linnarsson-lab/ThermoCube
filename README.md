@@ -1,7 +1,7 @@
 # ThermoCube
 Python library for control of the Solid State ThermoCube recirculating chiller. 
 
-The [TermoCube](https://www.sscooling.com/product/thermocube-liquid-to-liquid/) is a recirculating chiller to control temperature and is made by the company Solid State Cooling Systems. The code was written using the ThermoCube-200-500-Manual-Rev-M33 downloaded from [here](https://www.sscooling.com/wp-content/uploads/2021/07/ThermoCube-200-500-Manual-Rev-M33.pdf).  
+The [TermoCube](https://www.sscooling.com/product/thermocube-200-500/) is a recirculating chiller to control temperature and is made by the company Solid State Cooling Systems. The code was written using the ThermoCube-200-500-Manual-Rev-M33 downloaded from [here](https://www.sscooling.com/wp-content/uploads/2021/07/ThermoCube-200-500-Manual-Rev-M33.pdf).  
 
 # Get started
 - Make sure [pyserial](https://pythonhosted.org/pyserial/) is installed.
